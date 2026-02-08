@@ -15,7 +15,7 @@ import (
 func main() {
 	// Root context — владелец lifecycle всего сервиса.
 	// Отменяется ТОЛЬКО в одном месте.
-	ctx, cancel := context.WithCancel(context.Background())
+	_, cancel := context.WithCancel(context.Background())
 	defer cancel()
 
 	// Канал для системных сигналов.
